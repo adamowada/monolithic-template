@@ -158,6 +158,16 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 CORS_ALLOWED_ORIGINS = tuple(env.list("CORS_ALLOWED_ORIGINS"))
 CORS_ALLOW_ALL_ORIGINS = env.bool("CORS_ALLOW_ALL_ORIGINS")
 
+
+# DRF
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
+
+
+
 # OAuth
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.google.GoogleOAuth2',
